@@ -5,6 +5,7 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 const Userquestions = () =>
+    //Prompts the user for inputs using inquirer
     inquirer.prompt([
         {
             type: 'input',
@@ -55,7 +56,7 @@ const Userquestions = () =>
             name: 'projectGITHUB',
             message: 'What is your github username?'
         }
-
+    //After prompts are gotten a function is used with the answers to generatate the markdown file takes the file path and markdown generation return as parameters
     ]).then(function(answer){
         writeToFile('testREADME/testREADME.md', generateMarkdown(answer));
     });
@@ -63,6 +64,7 @@ const Userquestions = () =>
 
 // function to write README file
 function writeToFile(fileName, data) {
+    //Writes the file and will error if there is a problem, prints success to know it is written
     fs.writeFile(fileName, data, (err) =>
         err ? console.error(err) : console.log('Success!')
     );
