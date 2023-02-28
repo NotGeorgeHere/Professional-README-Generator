@@ -31,7 +31,7 @@ const Userquestions = () =>
             type: 'list',
             name: 'projectLicense',
             message: 'Licences used?',
-            choices: ['MIT', 'APACHE', 'The Unlicense', 'None']
+            choices: ['MIT', 'APACHE', 'GPL', 'None']
         },
         {
             type: 'input',
@@ -47,8 +47,13 @@ const Userquestions = () =>
         },
         {
             type: 'input',
-            name: 'projectQuestions',
-            message: 'Questions? (GitHub username and email)'
+            name: 'projectEmail',
+            message: 'What is your email?'
+        },
+        {
+            type: 'input',
+            name: 'projectGITHUB',
+            message: 'What is your github username?'
         }
 
     ]).then(function(answer){
