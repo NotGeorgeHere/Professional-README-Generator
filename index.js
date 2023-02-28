@@ -48,11 +48,11 @@ const Userquestions = () =>
         {
             type: 'input',
             name: 'projectQuestions',
-            message: 'Questions?'
+            message: 'Questions? (GitHub username and email)'
         }
 
     ]).then(function(answer){
-        writeToFile('testREADME.md', generateMarkdown(answer));
+        writeToFile('testREADME/testREADME.md', generateMarkdown(answer));
     });
     
 
