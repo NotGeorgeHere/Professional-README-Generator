@@ -52,12 +52,15 @@ const Userquestions = () =>
         }
 
     ]).then(function(answer){
-        generateMarkdown(answer);
+        writeToFile('testREADME.md', generateMarkdown(answer));
     });
     
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log('Success!')
+    );
 }
 
 // function to initialize program
